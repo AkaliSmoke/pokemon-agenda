@@ -12,6 +12,14 @@ namespace pokemon_agenda
 {
     public partial class FmCadastroPokemon : Form
     {
+        /* objetivo da aula: aprender a criar e utilizar objetos
+         * mini game pokemon
+         * 1- montar meu time pokemon (6 pokemon) -> Listas
+         * 2- treinar esse meu time pokemon (a cada treinamento ele recebe 2 nivel)
+         * 3- batalhar com esse pokemon de forma randonica
+         * sistema vai sortear 1 a 6 pokemon (somente os 151 primeiros)
+         */
+
         public FmCadastroPokemon()
         {
             InitializeComponent();
@@ -44,12 +52,16 @@ namespace pokemon_agenda
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string nomePokemon = txtNome.Text; // TextBox
-            string tipoPokemon = cboTipo.Text; // ComboBox
-            int nivelPokemon = (int)numNivel.Value; // NumericUpDown
+            string nomePokemon = txtNome.Text; //textBox
+            string tipoPokemon = cboTipo.Text; //comboBox
+            int nivelPokemon = (int)numNivel.Value; //numericUpDown
 
-            MessageBox.Show($"O Pokémon {nomePokemon} do tipo {tipoPokemon} " +
-                $"foi cadastrado com o nível {nivelPokemon}");
+            Pokemon poke = new Pokemon(nomePokemon, tipoPokemon, nivelPokemon);
+
+            poke.fnDescricao();
+
+            //MessageBox.Show($"O Pokémon {nomePokemon} do tipo {tipoPokemon} " +
+            //  $"foi cadastrado com o nível {nivelPokemon}");
 
             fnLimpar();
         }
