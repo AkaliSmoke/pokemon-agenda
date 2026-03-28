@@ -7,8 +7,23 @@ using System.Windows.Forms;
 
 namespace pokemon_agenda
 {
+
+    /// <summary>
+    /// Representa um Pokémon dentro da agenda, armazenando suas características e atributos de combate.
+    /// </summary>
     internal class Pokemon
     {
+        /// <summary>
+        /// Inicializa uma nova instância da classe <see cref="Pokemon""")/>> com atributos básicos definidos.
+        /// </summary>
+        /// <param name="nomePokemon">O nome da espécie do Pokémon (ex: Pikachu).</param>
+        /// <param name="tipoPokemon">O elemento do Pokémon (ex: Elétrico).</param>
+        /// <param name="nivelPokemon">O nível atual de experiência.</param>
+        /// <list type="bullet">
+        ///     <item>A Vida inicial é definida automaticamente como 100.</item>
+        ///     <item>O Dano inicial é definido automaticamente como 20.</item>
+        /// </list>
+
         // nome do pokemon
         // tipo do pokemon
         // nivel do pokemon
@@ -32,6 +47,15 @@ namespace pokemon_agenda
             Vida = 100;
             Dano = 20;
         }
+
+        /// <summary>
+        /// Exibe uma caixa de mensagem contendo os detalhes completos do Pokémon.
+        /// </summary>
+        /// <list type="number">
+        ///     <item>Coleta os dados de Nome, Tipo e Nível.</item>
+        ///     <item>Adiciona os status de Vida e Dano.</item>
+        ///     <item>Exibe o resultado via MessageBox.</item>
+        /// </list>
 
         // public posso usar da função em qualquer espaço do meu projeto
         // private posso usar a função somente no meu arquivo original
