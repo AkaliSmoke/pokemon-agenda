@@ -29,11 +29,13 @@ namespace pokemon_agenda
         // nivel do pokemon
         // vida do pokemon
         // dano do pokemon
-        string Nome;
-        string Tipo;
-        int Nivel;
-        int Vida;
-        int Dano;
+
+        // get set
+        public string Nome { get; set; }
+        public string Tipo { get; set; }
+        public int Nivel { get; set; }
+        public int Vida { get; set; }
+        public int Dano { get; set; }
 
         // Criação da função de inicialização padrão do meu objeto
         public Pokemon(string nomePokemon, string tipoPokemon, int nivelPokemon)
@@ -41,11 +43,13 @@ namespace pokemon_agenda
             //Nome = "Pikachu";
             //Tipo = "Elétrico";
             //Nivel = 5;
+
             Nome = nomePokemon;
             Tipo = tipoPokemon;
             Nivel = nivelPokemon;
-            Vida = 100;
-            Dano = 20;
+
+            Vida = nivelPokemon * 70;
+            Dano = nivelPokemon * 15;
         }
 
         /// <summary>
