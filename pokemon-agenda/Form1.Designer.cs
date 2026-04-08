@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dgvListaPokemon = new System.Windows.Forms.DataGridView();
+            this.btnVisualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNivel)).BeginInit();
@@ -56,7 +57,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -68,7 +68,6 @@
             this.label1.Size = new System.Drawing.Size(337, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "Agenda de Pokemon";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox1
             // 
@@ -186,13 +185,24 @@
             this.dgvListaPokemon.Name = "dgvListaPokemon";
             this.dgvListaPokemon.Size = new System.Drawing.Size(622, 187);
             this.dgvListaPokemon.TabIndex = 3;
-            this.dgvListaPokemon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaPokemon_CellContentClick);
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizar.Location = new System.Drawing.Point(327, 315);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(212, 34);
+            this.btnVisualizar.TabIndex = 4;
+            this.btnVisualizar.Text = "Visualizar Detalhes";
+            this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_click);
             // 
             // FmCadastroPokemon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 525);
+            this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.dgvListaPokemon);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -200,7 +210,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmCadastroPokemon";
             this.Text = "Pokemon Agenda";
-            this.Load += new System.EventHandler(this.FmCadastroPokemon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -225,6 +234,7 @@
         private System.Windows.Forms.NumericUpDown numNivel;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.DataGridView dgvListaPokemon;
+        private System.Windows.Forms.Button btnVisualizar;
     }
 }
 

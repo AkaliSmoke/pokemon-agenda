@@ -49,21 +49,6 @@ namespace pokemon_agenda
             txtNome.Focus();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTipo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string nomePokemon = txtNome.Text; //textBox
@@ -86,14 +71,25 @@ namespace pokemon_agenda
             fnLimpar();
         }
 
-        private void dgvListaPokemon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnVisualizar_click(object sender, EventArgs e)
         {
+            //pegar a lista selecionada!
 
-        }
+            //                           (ConverteParaoTipo)pegar linha seleciona do DGV
+            Pokemon PokemonSelecionado = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
+            //char = "a"
+            //string = "texto diverso"
+            //int = 57
+            //double = 32.65
+            //var
 
-        private void FmCadastroPokemon_Load(object sender, EventArgs e)
-        {
-            
+            PokemonSelecionado.fnDescricao();
+
+            FormDetalhesPokemon formD = new FormDetalhesPokemon();
+
+            // ShowDialogo() 'forço' usuario a focar na nova tela
+            // show() usuario pode usar qualquer tela ao mesmo tempo
+            formD.ShowDialog();
         }
     }
 }

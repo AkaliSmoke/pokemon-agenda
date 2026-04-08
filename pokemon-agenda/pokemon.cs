@@ -11,7 +11,7 @@ namespace pokemon_agenda
     /// <summary>
     /// Representa um Pokémon dentro da agenda, armazenando suas características e atributos de combate.
     /// </summary>
-    internal class Pokemon
+    public class Pokemon
     {
         /// <summary>
         /// Inicializa uma nova instância da classe <see cref="Pokemon""")/>> com atributos básicos definidos.
