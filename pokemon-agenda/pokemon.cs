@@ -68,5 +68,19 @@ namespace pokemon_agenda
             MessageBox.Show($"Pokemon: {Nome}, Tipo: {Tipo}, " +
                 $"Nível: {Nivel}, Vida: {Vida}, Dano: {Dano}");
         }
+
+        public string fnLinkImg()
+        {
+            string nomeTratado = Nome.Replace(" ", "-").Replace(".", "").ToLower();
+            return $"https://pokemondb.net{nomeTratado}.jpg";
+        }
+
+        public void fnTreinar()
+        {
+            Nivel++;
+
+            Vida = Nivel * 70;
+            Dano = Nivel * 15;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -73,23 +74,48 @@ namespace pokemon_agenda
 
         private void btnVisualizar_click(object sender, EventArgs e)
         {
+            //valida se a linha foi selecionada
+            if (dgvListaPokemon.CurrentRow != null) 
+            { 
+
             //pegar a lista selecionada!
 
             //                           (ConverteParaoTipo)pegar linha seleciona do DGV
             Pokemon PokemonSelecionado = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
-            //char = "a"
-            //string = "texto diverso"
-            //int = 57
-            //double = 32.65
-            //var
+                //char = "a"
+                //string = "texto diverso"
+                //int = 57
+                //double = 32.65
+                //var
 
-            PokemonSelecionado.fnDescricao();
+                //PokemonSelecionado.fnDescricao();
 
-            FormDetalhesPokemon formD = new FormDetalhesPokemon();
+                FormDetalhesPokemon formD = new FormDetalhesPokemon();
+                formD.pokemonRecebido = PokemonSelecionado;
 
-            // ShowDialogo() 'forço' usuario a focar na nova tela
-            // show() usuario pode usar qualquer tela ao mesmo tempo
-            formD.ShowDialog();
+
+                // ShowDialogo() 'forço' usuario a focar na nova tela
+                // show() usuario pode usar qualquer tela ao mesmo tempo
+                formD.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um dos pokemon na lista");
+            }
+        }
+
+        private void btnTreinar_Click(object sender, EventArgs e)
+        {
+            if (dgvListaPokemon.CurrentRow != null)
+            {
+                Pokemon pokemonParaTreinar = (Pokemon)dgvListaPokemon.CurrentRow.DataBoundItem;
+
+                pokemonParaTreinar.fnTreinar();
+
+                dgvListaPokemon.Refresh();
+
+                MessageBox.Show($"O Pokemon {pokemonParaTreinar.Nome} subiu 1 nível", "Alerta de treinamento");
+            }
         }
     }
 }
